@@ -1,12 +1,11 @@
-﻿namespace EasMe.Aspects;
+﻿using AspectInjector.Broker;
 
-using AspectInjector.Broker;
-using EasMe;
+namespace EasMe.Aspects;
 
 /// <summary>
-/// Basic caching aspect for caching method results.
-/// Cache key is built from namespace, class name, method name and arguments.
-/// It uses EasMemoryCache singleton class.
+///    Basic caching aspect for caching method results.
+///    Cache key is built from namespace, class name, method name and arguments.
+///    It uses EasMemoryCache singleton class.
 /// </summary>
 [Aspect(Scope.Global)]
 [Injection(typeof(EasMemoryCacheAspect))]

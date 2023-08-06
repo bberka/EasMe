@@ -18,23 +18,23 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Include="..\..\LICENSE.txt">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
-      <None Include="..\..\README.md">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
+        <None Include="..\..\LICENSE.txt">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\EasMe.Result\EasMe.Result.csproj" />
-        <ProjectReference Include="..\EasMe\EasMe.csproj" />
+        <ProjectReference Include="..\EasMe.Result\EasMe.Result.csproj"/>
+        <ProjectReference Include="..\EasMe\EasMe.csproj"/>
     </ItemGroup>
 
 </Project>

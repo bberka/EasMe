@@ -5,18 +5,18 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Title>EasMe.Aspects</Title>
-        <Description>Provides simple useful aspect attributes </Description>
+        <Description>Provides simple useful aspect attributes</Description>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="AspectInjector" Version="2.8.2" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
-      <PackageReference Include="Serilog" Version="3.0.1" />
+        <PackageReference Include="AspectInjector" Version="2.8.2"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0"/>
+        <PackageReference Include="Serilog" Version="3.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EasMe.Result\EasMe.Result.csproj" />
-      <ProjectReference Include="..\EasMe\EasMe.csproj" />
+        <ProjectReference Include="..\EasMe.Result\EasMe.Result.csproj"/>
+        <ProjectReference Include="..\EasMe\EasMe.csproj"/>
     </ItemGroup>
 
 </Project>

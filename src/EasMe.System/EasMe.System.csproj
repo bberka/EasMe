@@ -17,22 +17,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Include="..\..\LICENSE.txt">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
-      <None Include="..\..\README.md">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
+        <None Include="..\..\LICENSE.txt">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.Management" Version="7.0.2" />
+        <PackageReference Include="System.Management" Version="7.0.2"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\EasMe\EasMe.csproj" />
+        <ProjectReference Include="..\EasMe\EasMe.csproj"/>
     </ItemGroup>
 
 </Project>

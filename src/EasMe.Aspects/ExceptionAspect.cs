@@ -4,9 +4,7 @@ using Serilog;
 namespace EasMe.Aspects;
 
 /// <summary>
-/// Catches exceptions and re-throws them with a more detailed message.
-///
-/// 
+///    Catches exceptions and re-throws them with a more detailed message.
 /// </summary>
 [Aspect(Scope.PerInstance)]
 [Injection(typeof(ExceptionAspect))]
@@ -42,5 +40,4 @@ public class ExceptionAspect : Attribute
          throw new Exception(msg, ex);
       }
    }
-
 }

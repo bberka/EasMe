@@ -1,13 +1,10 @@
 ﻿using AspectInjector.Broker;
 using EasMe.Result;
-using Serilog;
 
 namespace EasMe.Aspects;
 
 /// <summary>
-/// Catches exceptions and converts them to Result Type
-///
-/// 
+///    Catches exceptions and converts them to Result Type
 /// </summary>
 [Aspect(Scope.PerInstance)]
 [Injection(typeof(ExceptionToResultConverterAspect))]
@@ -37,13 +34,12 @@ public class ExceptionToResultConverterAspect : Attribute
          return target(args);
       }
       catch (Exception ex) {
-         var isResultType = returnType == typeof(Result.Result) || returnType == typeof(Result.ResultData<>);
-         if(!isResultType) throw;
-         return Result.Result.Exception(ex,"Exception",new []
+         var isResultType = returnType == typeof(Result.Result) || returnType == typeof(ResultData<>);
+         if (!isResultType) throw;
+         return Result.Result.Exception(ex, "Exception", new[]
          {
-            new Param("methodName",methodName),
+            new Param("methodName", methodName)
          });
       }
    }
-
 }
