@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>3.3.1</Version>
-        <AssemblyVersion>3.3.1</AssemblyVersion>
+        <Version>4.0.0</Version>
+        <AssemblyVersion>4.0.0</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>EasMe.Logging</Title>
         <Description>Simple lightweight Json logging library.</Description>
