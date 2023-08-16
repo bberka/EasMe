@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>3.0.0</Version>
-        <AssemblyVersion>3.0.0</AssemblyVersion>
+        <Version>3.0.1</Version>
+        <AssemblyVersion>3.0.1</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>EasMe.Result</Title>
         <Authors>bberka</Authors>
