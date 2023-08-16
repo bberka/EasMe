@@ -34,4 +34,18 @@ public static class ExtensionMethods
     var message = localizer.GetResultMessage(result.ErrorCode, result.Params);
     return new SimpleResult(message, result.Level, result.HttpStatusCode,result.Data);
   }
+
+  internal static int ToHttpStatusCode(this ResultLevel level)
+  {
+    return level switch
+    {
+      ResultLevel.Exception => 500,
+      ResultLevel.Fatal => 500,
+      ResultLevel.Error => 400,
+      ResultLevel.Warn => 400,
+      ResultLevel.Info => 200,
+      ResultLevel.Success => 200,
+      _ => throw new ArgumentOutOfRangeException(nameof(level), level, null)
+    };
+  }
 }

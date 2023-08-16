@@ -19,7 +19,7 @@ public sealed class Result
 
    [JsonIgnore]
    [System.Text.Json.Serialization.JsonIgnore]
-   public int HttpStatusCode { get; init; }
+   public int HttpStatusCode  { get; init; } 
    /// <summary>
    ///    Indicates success status of <see cref="Result" />.
    /// </summary>
@@ -135,7 +135,8 @@ public sealed class Result
          IsSuccess = true,
          Level = ResultLevel.Success,
          ErrorCode = "None",
-         ExceptionInfo = null
+         ExceptionInfo = null,
+         HttpStatusCode =  ResultLevel.Success.ToHttpStatusCode()
       };
    }
    public static Result Success(string errorCode)
@@ -146,7 +147,8 @@ public sealed class Result
          IsSuccess = true,
          Level = ResultLevel.Success,
          ExceptionInfo = null,
-         HttpStatusCode = 200
+         HttpStatusCode =  ResultLevel.Success.ToHttpStatusCode()
+
       };
    }
 
@@ -158,7 +160,8 @@ public sealed class Result
          Params = @params,
          IsSuccess = true,
          Level = ResultLevel.Info,
-         HttpStatusCode = 200
+         HttpStatusCode =  ResultLevel.Success.ToHttpStatusCode()
+
       };
    }
 
@@ -174,7 +177,8 @@ public sealed class Result
          IsSuccess = false,
          Level = ResultLevel.Exception,
          ExceptionInfo = new CleanException(exception),
-         HttpStatusCode = 500
+         HttpStatusCode =  ResultLevel.Exception.ToHttpStatusCode()
+
       };
    }
    public static Result Exception(Exception exception, string errorCode, Param[] @params)
@@ -186,7 +190,8 @@ public sealed class Result
          IsSuccess = false,
          Level = ResultLevel.Exception,
          ExceptionInfo = new CleanException(exception),
-         HttpStatusCode = 500
+         HttpStatusCode =  ResultLevel.Exception.ToHttpStatusCode()
+
       };
    }
 
@@ -202,7 +207,8 @@ public sealed class Result
          IsSuccess = false,
          Level = ResultLevel.Warn,
          ExceptionInfo = null,
-         HttpStatusCode = 400
+         HttpStatusCode =  ResultLevel.Warn.ToHttpStatusCode()
+
       };
    }
    public static Result Warn(string errorCode, Param[] @params)
@@ -213,7 +219,8 @@ public sealed class Result
          IsSuccess = false,
          Level = ResultLevel.Warn,
          ExceptionInfo = null,
-         HttpStatusCode = 400,
+         HttpStatusCode =  ResultLevel.Warn.ToHttpStatusCode(),
+
          Params = @params
       };
    }
@@ -229,7 +236,7 @@ public sealed class Result
          ErrorCode = errorCode,
          IsSuccess = false,
          Level = ResultLevel.Fatal,
-         HttpStatusCode = 500,
+         HttpStatusCode = ResultLevel.Fatal.ToHttpStatusCode(),
          ExceptionInfo = new CleanException(exception)
       };
    }
@@ -240,7 +247,7 @@ public sealed class Result
          ErrorCode = errorCode,
          IsSuccess = false,
          Level = ResultLevel.Fatal,
-         HttpStatusCode = 500,
+         HttpStatusCode = ResultLevel.Warn.ToHttpStatusCode(),
          ExceptionInfo = new CleanException(exception),
          Params = @params
       };
@@ -252,7 +259,7 @@ public sealed class Result
          ErrorCode = errorCode,
          IsSuccess = false,
          Level = ResultLevel.Fatal,
-         HttpStatusCode = 500,
+         HttpStatusCode = ResultLevel.Warn.ToHttpStatusCode(),
          ExceptionInfo = null
       };
    }
@@ -264,7 +271,7 @@ public sealed class Result
          ErrorCode = errorCode,
          IsSuccess = false,
          Level = ResultLevel.Fatal,
-         HttpStatusCode = 500,
+         HttpStatusCode = ResultLevel.Warn.ToHttpStatusCode(),
          ExceptionInfo = null,
          Params = @params
       };
@@ -281,7 +288,7 @@ public sealed class Result
          ErrorCode = errorCode,
          IsSuccess = false,
          Level = ResultLevel.Error,
-         HttpStatusCode = 400,
+         HttpStatusCode = ResultLevel.Error.ToHttpStatusCode(),
          Params = @params,
          ExceptionInfo = null
       };
@@ -293,7 +300,7 @@ public sealed class Result
          ErrorCode = errorCode,
          IsSuccess = false,
          Level = ResultLevel.Error,
-         HttpStatusCode = 400,
+         HttpStatusCode = ResultLevel.Error.ToHttpStatusCode(),
          ExceptionInfo = null
       };
    }
